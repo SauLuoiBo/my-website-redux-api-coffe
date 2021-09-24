@@ -26,20 +26,20 @@ const ContactsList = (props) => {
 
 
 
-	const edit = (contact) => {
-		const request = {
-			id: contact.id,
-			name: contact.name,
-			email: contact.email,
-		};
-		console.log(request, "hhahahah");
-		props.editContactHandler(request);
-	};
+	// const edit = (contact) => {
+	// 	const request = {
+	// 		id: contact.id,
+	// 		name: contact.name,
+	// 		email: contact.email,
+	// 	};
+	// 	console.log(request, "hhahahah");
+	// 	props.editContactHandler(request);
+	// };
 
-	const del = (id) => {
-		console.log(id, "hhahahah");
-		props.removeContactHandler(id);
-	};
+	// const del = (id) => {
+	// 	console.log(id, "hhahahah");
+	// 	props.removeContactHandler(id);
+	// };
 	
 	const renderContactList = data.map((contact) => {
 		return (
