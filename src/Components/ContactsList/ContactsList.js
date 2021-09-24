@@ -44,8 +44,8 @@ const ContactsList = (props) => {
 	const renderContactList = data.map((contact) => {
 		return (
 			<ContactCard
-				removeContactHandler={del}
-				editContactHandler={edit}
+				// removeContactHandler={del}
+				// editContactHandler={edit}
 				contact={contact}
 				key={contact.id}
 			/>
