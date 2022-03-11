@@ -10,42 +10,42 @@ import { setContacts } from "../redux/contactSlice";
 import api from "../api/contact";
 
 const HomePage = () => {
-	// const contacts = useFetch('http://localhost:3006/contacts', [])
-	const dispatch = useDispatch();
+  // const contacts = useFetch('http://localhost:3006/contacts', [])
+  const dispatch = useDispatch();
 
-	// React.useEffect(() => {
-	//     dispatch(setContacts(contacts.data))
-	//     console.log(contacts.data)
-	// }, [dispatch,contacts.data])
+  // React.useEffect(() => {
+  //     dispatch(setContacts(contacts.data))
+  //     console.log(contacts.data)
+  // }, [dispatch,contacts.data])
 
-	React.useEffect(() => {
-		async function getPost() {
-			try {
-				const response = await api.get("/contacts");
-				console.log(response);
-				dispatch(setContacts(response.data));
-			} catch (err) {
-				if (err.response) {
-					console.log(err.response.data, 'data');
-					console.log(err.response.status, 'stats');
-					console.log(err.response.headers, 'he');
-				} else {
-					console.log(`Error: ${err.message}`);
-				}
-			}
-		}
-		getPost();
-	}, [dispatch]);
+  React.useEffect(() => {
+    async function getPost() {
+      try {
+        const response = await api.get("/contacts");
+        console.log(response);
+        dispatch(setContacts(response.data));
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data, "data");
+          console.log(err.response.status, "stats");
+          console.log(err.response.headers, "he");
+        } else {
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    }
+    getPost();
+  }, [dispatch]);
 
-	return (
-		<>
-			<Home />
-			<About />
-			<Menu />
-			<Reviews />
-			<Booking />
-		</>
-	);
+  return (
+    <>
+      <Home />
+      <About />
+      <Menu />
+      <Reviews />
+      <Booking />
+    </>
+  );
 };
 
 export default HomePage;
